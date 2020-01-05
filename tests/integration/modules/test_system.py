@@ -15,7 +15,6 @@ import pytest
 # Import Salt Testing libs
 from tests.support.case import ModuleCase
 from tests.support.unit import skipIf
-from tests.support.helpers import flaky
 
 # Import Salt libs
 import salt.utils.files
@@ -260,7 +259,7 @@ class SystemModuleTest(ModuleCase):
         self.assertTrue(self._same_times(time_now, cmp_time), msg=msg)
         self._test_hwclock_sync()
 
-    @flaky
+    @pytest.mark.flaky(max_runs=4)
     @pytest.mark.destructive_test
     @pytest.mark.skip_if_not_root
     def test_set_system_time(self):
