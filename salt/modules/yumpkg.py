@@ -223,7 +223,7 @@ def _yum_pkginfo(output):
             )
         else:
             if key == "version":
-                # Suppport packages with no 'Release' parameter
+                # Support packages with no 'Release' parameter
                 value = value.rstrip("-")
             elif key == "repoid":
                 # Installed packages show a '@' at the beginning
@@ -2274,6 +2274,7 @@ def hold(
 
         - On RHEL 5: ``yum-versionlock``
         - On RHEL 6 & 7: ``yum-plugin-versionlock``
+        - On RHEL 8 & 9: ``python3-dnf-plugin-versionlock``
         - On Fedora: ``python-dnf-plugins-extras-versionlock``
 
 
@@ -2355,6 +2356,7 @@ def unhold(name=None, pkgs=None, sources=None, **kwargs):  # pylint: disable=W06
 
         - On RHEL 5: ``yum-versionlock``
         - On RHEL 6 & 7: ``yum-plugin-versionlock``
+        - On RHEL 8 & 9: ``python3-dnf-plugin-versionlock``
         - On Fedora: ``python-dnf-plugins-extras-versionlock``
 
 
@@ -2456,6 +2458,7 @@ def list_holds(pattern=__HOLD_PATTERN, full=True):
 
         - On RHEL 5: ``yum-versionlock``
         - On RHEL 6 & 7: ``yum-plugin-versionlock``
+        - On RHEL 8 & 9: ``python3-dnf-plugin-versionlock``
         - On Fedora: ``python-dnf-plugins-extras-versionlock``
 
     pattern : \w+(?:[.-][^-]+)*
